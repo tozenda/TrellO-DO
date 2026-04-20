@@ -1,44 +1,82 @@
-# Trello-Do
+# TrellO-DO
 
-A React + Ant Design work board centered on initiative swimlanes.
+Personal initiative board for local use.
 
 ## Stack
 
-- React
-- Ant Design
-- Vite
+- React 18 + Ant Design
+- Vite for the frontend build
+- local Node HTTP server
+- TypeScript across frontend, shared state, and server modules
+- Vitest + React Testing Library for regression coverage
 
 ## What it does
 
-- Organizes work by initiative.
-- Uses sub-swimlanes for `Backlog`, `In Progress`, and `Done`.
-- Supports drag-and-drop across both status lanes and initiative lanes.
-- Persists workspace state to a local JSON file through a Node API.
+- initiative swimlanes
+- drag cards across columns and between initiatives
+- card priorities and notes
+- local persistence to disk
+- optional Claude CLI-backed task generation
 
-## Run it
+## Scripts
+
+Install dependencies:
 
 ```bash
-npm start
+npm install
 ```
 
-Then open `http://127.0.0.1:3000`.
+Run the local web app in development:
 
-## Build
+```bash
+npm run dev
+```
+
+Build the frontend and typed server output:
 
 ```bash
 npm run build
 ```
 
-## Persistence model
+Run the production-style local server:
 
-The app persists:
+```bash
+npm start
+```
 
-- initiatives
-- cards
-- card memory/context notes
-- the active initiative
-- the 12 most recent activity entries
+Run the test suite:
 
-Data is stored on disk at `data/workspace.json`.
+```bash
+npm test
+```
 
-Theme preference still stays in browser `localStorage`.
+The local app runs on `http://127.0.0.1:3000`.
+
+## Data storage
+
+The app persists local state in:
+
+- `data/workspace.json`
+- `data/claude-debug.log`
+
+## Claude task generation
+
+Claude integration is optional and uses the locally installed `claude` CLI.
+
+Requirements:
+
+```bash
+claude
+```
+
+Then complete `/login` in Terminal once.
+
+If Claude is unavailable or not logged in, the rest of the app still works.
+
+## Structure
+
+- `server/`: typed local backend, HTTP routes, static serving, Claude integration
+- `src/app/`: app shell and theme
+- `src/features/`: feature-first UI modules
+- `src/shared/`: shared types, state helpers, utilities, and API client
+- `src/styles/`: split CSS by responsibility

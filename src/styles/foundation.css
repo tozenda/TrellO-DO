@@ -1,0 +1,50 @@
+body {
+  margin: 0;
+  background: #f5f7fa;
+}
+
+:root[data-theme="dark"] body {
+  background: #0b1220;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.app-layout {
+  min-height: 100vh;
+  background: #f5f7fa;
+}
+
+.app-content {
+  padding: 10px 20px 24px;
+}
+
+.header-tag {
+  background: #ffffff;
+  border: 1px solid #eaecf0;
+  border-radius: 999px;
+  color: #475467;
+  margin-inline-end: 0;
+  padding: 6px 12px;
+}
+
+:root[data-theme="dark"] .app-layout {
+  background: #0b1220;
+}
+
+:root[data-theme="dark"] .header-tag {
+  background: #1f2937;
+  border-color: #1f2937;
+  color: #cbd5e1;
+}
+
+@media (max-width: 900px) {
+  .app-layout {
+    display: block;
+  }
+
+  .app-content {
+    padding-inline: 14px;
+  }
+}

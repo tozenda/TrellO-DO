@@ -1,0 +1,170 @@
+.app-sider {
+  border-inline-end: 1px solid #eaecf0;
+  overflow: auto;
+  padding: 20px 16px;
+}
+
+.brand-topbar {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.theme-toggle-label {
+  white-space: nowrap;
+}
+
+.brand-block {
+  border-bottom: 1px solid #f0f2f5;
+  margin-bottom: 16px;
+  padding: 4px 8px 20px;
+}
+
+.brand-title.ant-typography {
+  margin-top: 12px;
+  margin-bottom: 8px;
+}
+
+.brand-copy.ant-typography {
+  color: #667085;
+  margin-bottom: 0;
+}
+
+.panel-card {
+  border: 1px solid #eaecf0;
+  box-shadow: none;
+  margin-bottom: 16px;
+}
+
+.initiative-list-item {
+  padding-inline: 0 !important;
+}
+
+.initiative-list {
+  display: grid;
+  gap: 12px;
+}
+
+.initiative-filter-button {
+  margin-bottom: 12px;
+}
+
+.initiative-button {
+  appearance: none;
+  background: #ffffff;
+  border: 1px solid #eaecf0;
+  border-radius: 14px;
+  cursor: grab;
+  padding: 14px;
+  text-align: left;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  width: 100%;
+}
+
+.initiative-button:active {
+  cursor: grabbing;
+}
+
+.initiative-button:hover,
+.initiative-button.active {
+  border-color: #91caff;
+  box-shadow: 0 0 0 3px rgba(22, 119, 255, 0.08);
+}
+
+.initiative-button-row {
+  align-items: center;
+  display: flex;
+  gap: 12px;
+  justify-content: space-between;
+}
+
+.initiative-goal-text {
+  display: block;
+  line-height: 1.5;
+  margin-top: 8px;
+}
+
+.initiative-foot {
+  margin-top: 12px;
+}
+
+.memory-stats .ant-statistic {
+  background: #fafafa;
+  border: 1px solid #f0f2f5;
+  border-radius: 12px;
+  padding: 12px;
+}
+
+.memory-stats .ant-statistic-content {
+  font-size: 24px;
+}
+
+.activity-list {
+  display: grid;
+  gap: 0;
+  margin-top: 16px;
+}
+
+.panel-inline-note {
+  display: block;
+  margin-top: 12px;
+}
+
+.activity-item {
+  align-items: flex-start !important;
+  border-bottom: 1px solid #f0f2f5 !important;
+}
+
+.activity-context.ant-typography {
+  margin-top: 6px;
+  margin-bottom: 6px;
+}
+
+:root[data-theme="dark"] .app-sider {
+  border-inline-end-color: #1f2937;
+}
+
+:root[data-theme="dark"] .brand-block {
+  border-bottom-color: #1f2937;
+}
+
+:root[data-theme="dark"] .panel-card,
+:root[data-theme="dark"] .memory-stats .ant-statistic {
+  border-color: #1f2937;
+}
+
+:root[data-theme="dark"] .initiative-button,
+:root[data-theme="dark"] .memory-stats .ant-statistic,
+:root[data-theme="dark"] .activity-item {
+  background: #111827;
+}
+
+:root[data-theme="dark"] .panel-card {
+  background: #101828;
+}
+
+:root[data-theme="dark"] .initiative-button:hover,
+:root[data-theme="dark"] .initiative-button.active {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.16);
+}
+
+:root[data-theme="dark"] .brand-copy.ant-typography,
+:root[data-theme="dark"] .initiative-goal-text,
+:root[data-theme="dark"] .activity-context.ant-typography {
+  color: #98a2b3;
+}
+
+:root[data-theme="dark"] .activity-item {
+  border-bottom-color: #1f2937 !important;
+}
+
+@media (max-width: 900px) {
+  .app-sider {
+    max-width: none !important;
+    min-width: 0 !important;
+    padding-inline: 14px;
+    width: auto !important;
+  }
+}

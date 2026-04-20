@@ -4,9 +4,12 @@
   "private": true,
   "description": "Trello-inspired initiative board with persistent memory.",
   "scripts": {
-    "dev": "node server.js",
-    "start": "node server.js",
-    "build": "vite build"
+    "dev": "tsx server/index.ts",
+    "build:web": "vite build",
+    "build:server": "node -e \"require('node:fs').rmSync('dist-server', { recursive: true, force: true })\" && tsc -p tsconfig.server.json",
+    "build": "npm run build:web && npm run build:server",
+    "start": "node dist-server/server/index.js",
+    "test": "vitest run"
   },
   "dependencies": {
     "@vitejs/plugin-react": "^4.7.0",
@@ -14,5 +17,18 @@
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "vite": "^6.4.2"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.2.0",
+    "@testing-library/user-event": "^14.6.1",
+    "@types/node": "^22.15.3",
+    "@types/react": "^18.3.18",
+    "@types/react-dom": "^18.3.5",
+    "@vitest/coverage-v8": "^3.1.4",
+    "jsdom": "^26.1.0",
+    "tsx": "^4.19.4",
+    "typescript": "^5.8.3",
+    "vitest": "^3.1.4"
   }
 }

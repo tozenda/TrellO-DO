@@ -1,0 +1,31 @@
+.generated-task-list {
+  display: grid;
+  gap: 12px;
+}
+
+.generated-task-toolbar {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.generated-task-card {
+  border: 1px solid #eaecf0;
+}
+
+.generated-task-card .ant-card-body {
+  padding: 16px;
+}
+
+.generated-task-checkbox {
+  margin-bottom: 12px;
+}
+
+.generated-task-card .ant-form-item:last-child {
+  margin-bottom: 0;
+}
+
+:root[data-theme="dark"] .generated-task-card {
+  background: #111827;
+  border-color: #1f2937;
+}

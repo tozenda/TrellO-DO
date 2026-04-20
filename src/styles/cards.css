@@ -1,0 +1,137 @@
+.work-card {
+  background: linear-gradient(180deg, #ffffff 0%, #fcfcfd 100%);
+  border: 1px solid #e4e7ec;
+  box-shadow: 0 1px 2px rgba(16, 24, 40, 0.04);
+  cursor: grab;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+}
+
+.work-card:hover {
+  border-color: #d0d5dd;
+  box-shadow: 0 8px 24px rgba(16, 24, 40, 0.08);
+  transform: translateY(-1px);
+}
+
+.work-card .ant-card-body {
+  display: grid;
+  gap: 14px;
+  padding: 14px;
+}
+
+.work-card-top {
+  align-items: flex-start;
+  display: flex;
+  gap: 12px;
+  justify-content: space-between;
+}
+
+.work-card-actions {
+  align-items: center;
+  display: inline-flex;
+  flex: 0 0 auto;
+  gap: 2px;
+  margin-inline-end: -6px;
+  margin-top: -4px;
+}
+
+.work-card-title-block {
+  min-width: 0;
+}
+
+.work-card-title.ant-typography {
+  color: #101828;
+  display: block;
+  font-size: 18px;
+  line-height: 1.35;
+  margin-bottom: 8px;
+}
+
+.work-card-meta {
+  align-items: center;
+}
+
+.work-card-edit,
+.work-card-delete {
+  color: #667085;
+}
+
+.work-card-section {
+  display: grid;
+  gap: 6px;
+}
+
+.work-card-label {
+  color: #667085;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.work-card-copy.ant-typography,
+.work-card-notes-copy.ant-typography {
+  line-height: 1.55;
+  margin: 0;
+}
+
+.work-card-copy.is-placeholder.ant-typography,
+.work-card-notes-copy.is-placeholder.ant-typography {
+  color: #98a2b3;
+}
+
+.work-card-notes {
+  background: #f8fafc;
+  border: 1px solid #eaecf0;
+  border-radius: 12px;
+  display: grid;
+  gap: 6px;
+  padding: 12px;
+}
+
+.work-card-notes-toggle {
+  align-items: center;
+  appearance: none;
+  background: transparent;
+  border: none;
+  color: #475467;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  padding: 0;
+  text-align: left;
+  width: 100%;
+}
+
+.work-card-notes-toggle:hover .work-card-label {
+  color: #344054;
+}
+
+:root[data-theme="dark"] .work-card,
+:root[data-theme="dark"] .work-card-notes {
+  border-color: #1f2937;
+}
+
+:root[data-theme="dark"] .work-card,
+:root[data-theme="dark"] .work-card-notes {
+  background: #111827;
+}
+
+:root[data-theme="dark"] .work-card-copy.is-placeholder.ant-typography,
+:root[data-theme="dark"] .work-card-notes-copy.is-placeholder.ant-typography {
+  color: #98a2b3;
+}
+
+:root[data-theme="dark"] .work-card-notes-toggle:hover {
+  background: transparent;
+}
+
+:root[data-theme="dark"] .work-card-delete {
+  color: #f87171;
+}
+
+:root[data-theme="dark"] .work-card-edit {
+  color: #cbd5e1;
+}

@@ -1,0 +1,133 @@
+.celebration-layer {
+  inset: 0;
+  pointer-events: none;
+  position: fixed;
+  z-index: 1400;
+}
+
+.celebration-burst {
+  inset: 0;
+  position: fixed;
+}
+
+.celebration-flash {
+  animation: celebration-flash 650ms ease-out forwards;
+  background: radial-gradient(
+    circle at 50% 42%,
+    rgba(20, 184, 166, 0.2) 0%,
+    rgba(22, 119, 255, 0.14) 24%,
+    rgba(245, 158, 11, 0.08) 42%,
+    rgba(255, 255, 255, 0) 68%
+  );
+  inset: 0;
+  position: absolute;
+}
+
+.celebration-toast {
+  animation:
+    celebration-toast-in 260ms cubic-bezier(0.18, 0.89, 0.32, 1.18) forwards,
+    celebration-toast-out 420ms ease-in 1200ms forwards;
+  background: linear-gradient(135deg, rgba(20, 184, 166, 0.96), rgba(22, 119, 255, 0.96));
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 999px;
+  box-shadow: 0 24px 60px rgba(15, 23, 42, 0.22);
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 700;
+  left: 50%;
+  letter-spacing: 0.04em;
+  padding: 10px 18px;
+  position: absolute;
+  top: 18%;
+  transform: translate(-50%, 8px) scale(0.92);
+  white-space: nowrap;
+}
+
+.celebration-particle {
+  animation: celebration-confetti var(--duration) cubic-bezier(0.2, 0.9, 0.2, 1) forwards;
+  animation-delay: var(--delay);
+  background: var(--color);
+  border-radius: 3px;
+  box-shadow: 0 10px 20px rgba(15, 23, 42, 0.16);
+  height: calc(var(--size) * 1.6);
+  left: var(--left);
+  opacity: 0;
+  position: absolute;
+  top: 10%;
+  transform:
+    translate3d(0, -40px, 0)
+    rotate(0deg)
+    scale(0.8);
+  transform-origin: center;
+  width: var(--size);
+}
+
+.celebration-particle[data-shape="circle"] {
+  border-radius: 999px;
+}
+
+.celebration-particle[data-shape="capsule"] {
+  border-radius: 999px;
+  height: calc(var(--size) * 1.2);
+  width: calc(var(--size) * 2);
+}
+
+@keyframes celebration-confetti {
+  0% {
+    opacity: 0;
+    transform:
+      translate3d(0, -40px, 0)
+      rotate(0deg)
+      scale(0.8);
+  }
+
+  10% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    transform:
+      translate3d(var(--drift), 82vh, 0)
+      rotate(var(--rotation))
+      scale(1);
+  }
+}
+
+@keyframes celebration-flash {
+  0% {
+    opacity: 0;
+  }
+
+  18% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes celebration-toast-in {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, 8px) scale(0.92);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(-50%, 0) scale(1);
+  }
+}
+
+@keyframes celebration-toast-out {
+  0% {
+    opacity: 1;
+    transform: translate(-50%, 0) scale(1);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -14px) scale(0.96);
+  }
+}
